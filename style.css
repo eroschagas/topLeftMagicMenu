@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+}
+body {
+  height: 100vh;
+  background-color: var(--color1);
+  transition: all 1s ease-out;
+}
+:root {
+  --color1: #b6ad90;
+  --color2: #9c6644;
+  --color3: black;
+  --color4: white;
+  --color5: #583101;
+  --shadow: rgba(73, 73, 73, 0.562);
+  --p: black;
+  --title: #000;
+  --name: #656d4a;
+}
+
+p {
+  font-family: "Lora", sans-serif;
+  color: var(--p);
+  margin: 20px;
+  transition: all 1s ease-out;
+}
+.container-fluid,
+.row {
+  margin: 0;
+  padding: 0;
+}
+@keyframes scaleOut {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes scaleIn {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}
+@keyframes fadeIn {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeInFull {
+  50% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOutFull {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes maxHeightDown {
+  0% {
+    max-height: 0px;
+  }
+  100% {
+    max-height: 500px;
+  }
+}
+@keyframes maxHeightUp {
+  0% {
+    max-height: 500px;
+  }
+  100% {
+    max-height: 0px;
+  }
+}
+@keyframes colorChange {
+  0% {
+    color: var(--color4);
+  }
+  100% {
+    color: var(--color3);
+  }
+}
+.top-container {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  flex-direction: row;
+}
+.top-container > div:first-child {
+  height: 80px;
+  width: 615px;
+}
+.menu-top {
+  display: block;
+  width: 615px;
+  height: 40px;
+  background-color: var(--color5);
+}
+.menu-top div {
+  font-family: "Redressed", cursive;
+  font-size: 24px;
+  width: 80px;
+  height: 40px;
+  background-color: transparent;
+  display: block;
+  float: left;
+  position: relative;
+  margin: 0px 20px 0 20px;
+  line-height: 40px;
+  text-align: center;
+  color: var(--color4);
+  opacity: 0;
+}
+.menu-container {
+  width: 615px;
+  height: 40px;
+  display: block;
+  background-color: var(--color5);
+  float: left;
+  border-radius: 0 0 30px 0;
+}
+.menu-container a {
+  width: 80px;
+  height: 40px;
+  background-color: transparent;
+  float: left;
+  position: relative;
+  margin: 0px 20px 0 20px;
+  cursor: pointer;
+}
+.menu-item-container {
+  width: 80px;
+  height: 40px;
+  position: relative;
+  background-color: var(--color1);
+  border-radius: 10px 10px 0 0;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: all 1s ease-out;
+}
+.menu-container a ion-icon {
+  font-size: 32px;
+  width: 80px;
+  color: var(--color4);
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -2px;
+  bottom: 0;
+  margin: auto;
+  background-color: transparent;
+  transform: scale(1);
+  transition: all 0.3s ease-out;
+}
+.menu-container a ion-icon:hover {
+  transition: all 0.05s ease-out;
+  filter: drop-shadow(0px 0px 10px var(--color4));
+}
+
+.menu-item-container:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: block;
+  background-color: var(--color5);
+  position: absolute;
+  top: 30px;
+  left: -10px;
+  border-radius: 0 0 80% 0;
+  box-shadow: 3px 3px var(--color1);
+  transition: all 1s ease-out;
+}
+.menu-item-container:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: block;
+  background-color: var(--color5);
+  position: absolute;
+  top: 30px;
+  left: 80px;
+  border-radius: 0 0 0 80%;
+  box-shadow: -3px 3px var(--color1);
+  transition: all 1s ease-out;
+}
+.name-home {
+  height: 80px;
+  width: 100%;
+  display: block;
+  background-color: transparent;
+  text-align: left;
+}
+.name-home h1 {
+  font-family: "Redressed", cursive;
+  color: var(--name);
+  background-color: transparent;
+  font-size: 64px;
+  line-height: 80px;
+  text-shadow: 4px 4px 8px var(--shadow);
+  margin: 0 40px;
+  position: relative;
+  z-index: 1000;
+  transition: all 1s ease-out;
+}
+.name-home img {
+  width: 400px;
+  position: relative;
+  top: -40px;
+  z-index: 900;
+  color: var(--color2);
+}
+
+.div-home {
+  height: 500px;
+  width: 100%;
+  display: none;
+  opacity: 0;
+  background-color: transparent;
+  padding-top: 90px;
+}
+.title {
+  font-family: "Lora", sans-serif;
+  color: var(--title);
+  font-size: 48px;
+  margin: 20px;
+  transition: all 1s ease-out;
+}
+
+/*  -----Animations----- */
+
+.menu-scale-out {
+  animation: scaleOut 0.3s forwards ease-out;
+}
+.menu-scale-in {
+  animation: scaleIn 0.3s forwards ease-out;
+}
+.menu-fade-out {
+  animation: fadeOut 0.3s forwards ease-out;
+}
+.menu-fade-in {
+  animation: fadeIn 0.3s forwards ease-out;
+}
+.menu-fade-out-full {
+  animation: fadeOutFull 0.3s forwards linear;
+}
+.menu-fade-in-full {
+  animation: fadeInFull 0.6s forwards linear;
+}
+.menu-color-change {
+  animation: colorChange 0.3s forwards ease-out;
+}
+.menu-max-height-up {
+  animation: maxHeightUp 1s forwards linear;
+}
+.menu-max-height-down {
+  animation: maxHeightDown 1s forwards linear;
+}
